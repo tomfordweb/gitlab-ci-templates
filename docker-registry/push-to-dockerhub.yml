@@ -1,9 +1,6 @@
 stages:
   - build
 variables:
-  DOCKER_IMAGE_NAME: $CI_PROJECT_NAME
-  DOCKERHUB_PASSWORD: "unset"
-  DOCKERHUB_USERNAME: "unset"
 
 image: docker:latest
 
@@ -11,8 +8,10 @@ services:
   - docker:dind
 
 variables:
-  TAG_COMMIT: $DOCKERHUB_USERNAME/$DOCKER_IMAGE_NAME:$CI_COMMIT_TAG
-  TAG_LATEST: $DOCKERHUB_USERNAME/$DOCKER_IMAGE_NAME:latest
+  DOCKERHUB_PASSWORD: "unset"
+  DOCKERHUB_USERNAME: "unset"
+  TAG_COMMIT: $DOCKERHUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_TAG
+  TAG_LATEST: $DOCKERHUB_USERNAME/$CI_PROJECT_NAME:latest
 
 build tag:
   stage: build
