@@ -7,9 +7,8 @@ image: docker:latest
 services:
   - docker:dind
 
+# You must also have a DOCKERHUB_USERNAME and DOCKERHUB_PASSWORD in your ci variables
 variables:
-  DOCKERHUB_PASSWORD: "unset"
-  DOCKERHUB_USERNAME: "unset"
   TAG_COMMIT: $DOCKERHUB_USERNAME/$CI_PROJECT_NAME:$CI_COMMIT_TAG
   TAG_LATEST: $DOCKERHUB_USERNAME/$CI_PROJECT_NAME:latest
 
