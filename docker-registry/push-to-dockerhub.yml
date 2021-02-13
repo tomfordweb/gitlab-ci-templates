@@ -1,7 +1,7 @@
 stages:
   - build
 variables:
-  DOCKER_IMAGE_NAME: $CI_PROJECT_SLUG
+  DOCKER_IMAGE_NAME: $CI_PROJECT_NAME
   DOCKERHUB_PASSWORD: "unset"
   DOCKERHUB_USERNAME: "unset"
 
