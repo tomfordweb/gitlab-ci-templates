@@ -28,7 +28,9 @@ build tag:
 build latest:
   stage: build
   only:
-    - master
+    refs:
+      - main
+      - master
   script:
     - echo "Building ${TAG_LATEST}..."
     - docker pull $TAG_LATEST || true
